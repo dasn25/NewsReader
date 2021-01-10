@@ -81,8 +81,8 @@ def createLinks():
         for idx, item in enumerate(items):
             #print(str(item["title"]), idx)
             show_message(device, str(item["title"]), fill="white", font=proportional(LCD_FONT), scroll_delay=0.08)
-            img = qr.make(str(item["link"]))
-            device2.display(img.convert(device2.mode))
+            img = qrcode.make(str(item["link"]))
+            device2.display(img)
     except ValueError:
         print("Bummer :( I couldn't make you 'dem links :(")
     finally:
