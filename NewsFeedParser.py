@@ -86,6 +86,7 @@ def createLinks():
         populateItems()
         for idx, item in enumerate(items):
             print(str(item["title"]), idx)
+            qr.clear()
             qr.add_data(str(item["link"]))
             qr.make(fit=True)
             img = qr.make_image(fill_color="black", back_color="white")
