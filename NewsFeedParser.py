@@ -49,7 +49,7 @@ device = max7219(serial, width=32, height=8, block_orientation=-90)
 device2 = ssd1327(serial2)
 device.contrast(5)
 virtual = viewport(device, width=32, height=16)
-#show_message(device, 'Dan is really awesome', fill="white", font=proportional(LCD_FONT), scroll_delay=0.08)
+show_message(device, 'Dan is really awesome', fill="white", font=proportional(LCD_FONT), scroll_delay=0.08)
 
 background = Image.new("RGBA", device2.size, "white")
 
