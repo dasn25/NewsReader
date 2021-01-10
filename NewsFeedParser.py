@@ -85,14 +85,14 @@ def createLinks():
     try:
         populateItems()
         for idx, item in enumerate(items):
-            #print(str(item["title"]), idx)
-            #qr.add_data(str(item["link"]))
-            #qr.make(fit=True)
-            #img = qr.make_image(fill_color="black", back_color="white")
-            #img = img.resize(125,125)
-            #img = img.convert("RGBA")
-            #background.paste(img)
-            #device2.display(background.convert(device2.mode))
+            print(str(item["title"]), idx)
+            qr.add_data(str(item["link"]))
+            qr.make(fit=True)
+            img = qr.make_image(fill_color="black", back_color="white")
+            img = img.resize(125,125)
+            img = img.convert("RGBA")
+            background.paste(img)
+            device2.display(background.convert(device2.mode))
             show_message(device, str(item["title"]), fill="white", font=proportional(LCD_FONT), scroll_delay=0.08)
     except ValueError:
         print("Bummer :( I couldn't make you 'dem links :(")
