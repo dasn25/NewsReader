@@ -11,7 +11,7 @@ from PIL import Image, ImageFont, ImageDraw
 from random import shuffle
 
 from luma.core.interface.serial import i2c, spi, noop
-from luma.core.interface.parallel import bitbang_6800
+#from luma.core.interface.parallel import bitbang_6800
 from luma.core.render import canvas
 from luma.core.virtual import viewport
 from luma.led_matrix.device import max7219
