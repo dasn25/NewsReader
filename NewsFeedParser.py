@@ -33,6 +33,14 @@ feeds=[
     "https://www.mlb.com/feeds/news/rss.xml"
      ]
 
+qr = qrcode.QRCode(
+    version = 25,
+    border = 2
+    )
+
+
+
+
 serial = spi(port=0, device=0, gpio = noop())
 serial2= i2c(port=1, address=0x3D)
 device = max7219(serial, width=32, height=8, block_orientation=-90)
@@ -41,8 +49,8 @@ device.contrast(5)
 virtual = viewport(device, width=32, height=16)
 show_message(device, 'Dan is really awesome', fill="white", font=proportional(LCD_FONT), scroll_delay=0.08)
 
-with canvas(device2, dither=True) as draw:
-    draw.rectangle((10,10,30,30), outline="white", fill="red")
+#with canvas(device2, dither=True) as draw:
+ #   draw.rectangle((10,10,30,30), outline="white", fill="red")
 
 #try:
  #   while True:
@@ -73,8 +81,8 @@ def createLinks():
         for idx, item in enumerate(items):
             #print(str(item["title"]), idx)
             show_message(device, str(item["title"]), fill="white", font=proportional(LCD_FONT), scroll_delay=0.08)
-            #img = qrcode.make(str(item["link"]))
-           # img.show()
+            img = qr.make(str(item["link"]))
+            device2.display(img.convert(device2.mode))
     except ValueError:
         print("Bummer :( I couldn't make you 'dem links :(")
     finally:
