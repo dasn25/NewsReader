@@ -25,12 +25,14 @@ displayItems=[]
 feeds=[
     #enter all news feeds you want here
     #"http://www.fda.gov/AboutFDA/ContactFDA/StayInformed/RSSFeeds/PressReleases/rss.xml",
-    #"http://www.fiercepharma.com/feed",
-    #"http://www.fiercebiotech.com/feed",
-    "http://feeds.bbci.co.uk/news/world/rss.xml",
-    "http://www.aljazeera.com/xml/rss/all.xml",
-    "https://www.mlbtraderumors.com/feed",
-    "https://www.mlb.com/feeds/news/rss.xml"
+    "http://www.fiercepharma.com/feed",
+    "http://www.fiercebiotech.com/feed",
+    #"http://feeds.bbci.co.uk/news/world/rss.xml",
+    #"http://www.aljazeera.com/xml/rss/all.xml",
+    #"https://www.mlbtraderumors.com/feed",
+    #"https://www.mlb.com/feeds/news/rss.xml"
+    
+    
      ]
 
 qr = qrcode.QRCode(
@@ -47,7 +49,7 @@ device = max7219(serial, width=32, height=8, block_orientation=-90)
 device2 = ssd1327(serial2)
 device.contrast(5)
 virtual = viewport(device, width=32, height=16)
-show_message(device, 'Dan is really awesome', fill="white", font=proportional(LCD_FONT), scroll_delay=0.08)
+#show_message(device, 'Dan is really awesome', fill="white", font=proportional(LCD_FONT), scroll_delay=0.08)
 
 background = Image.new("RGBA", device2.size, "white")
 
