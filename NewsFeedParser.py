@@ -36,7 +36,7 @@ feeds=[
      ]
 
 qr = qrcode.QRCode(
-    version = 27,
+    version = 5,
     border = 2
     )
 
