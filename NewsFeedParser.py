@@ -89,7 +89,7 @@ def createLinks():
             qr.add_data(str(item["link"]))
             qr.make(fit=True)
             img = qr.make_image(fill_color="black", back_color="white")
-            #img = img.resize(125,125)
+            img = img.resize(device2.size)
             img = img.convert("RGBA")
             background.paste(img)
             device2.display(background.convert(device2.mode))
