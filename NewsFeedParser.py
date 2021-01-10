@@ -62,8 +62,8 @@ background = Image.new("RGBA", device2.size, "white")
    #         text(draw, (0, 1), "Dan is really awesome", fill="white", font=proportional(CP437_FONT))
            #text(draw, (0, 1), datetime.now().strftime('%I:%M'), fill="white", font=proportional(CP437_FONT))
 
-except KeyboardInterrupt:
-    GPIO.cleanup()
+#except KeyboardInterrupt:
+#    GPIO.cleanup()
  
  
 
