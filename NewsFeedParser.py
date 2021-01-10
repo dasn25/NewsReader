@@ -25,18 +25,18 @@ displayItems=[]
 feeds=[
     #enter all news feeds you want here
     #"http://www.fda.gov/AboutFDA/ContactFDA/StayInformed/RSSFeeds/PressReleases/rss.xml",
-    "http://www.fiercepharma.com/feed",
-    "http://www.fiercebiotech.com/feed",
-    #"http://feeds.bbci.co.uk/news/world/rss.xml",
-    #"http://www.aljazeera.com/xml/rss/all.xml",
-    #"https://www.mlbtraderumors.com/feed",
-    #"https://www.mlb.com/feeds/news/rss.xml"
+    #"http://www.fiercepharma.com/feed",
+    #"http://www.fiercebiotech.com/feed",
+    "http://feeds.bbci.co.uk/news/world/rss.xml",
+    "http://www.aljazeera.com/xml/rss/all.xml",
+    "https://www.mlbtraderumors.com/feed",
+    "https://www.mlb.com/feeds/news/rss.xml"
     
     
      ]
 
 qr = qrcode.QRCode(
-    version = 5,
+    version = 2,
     border = 2
     )
 
