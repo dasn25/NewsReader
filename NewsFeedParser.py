@@ -84,7 +84,7 @@ def createLinks():
         populateItems()
         for idx, item in enumerate(items):
             #print(str(item["title"]), idx)
-            img = qrcode.make(str(item["link"]))
+            img = qr.make(str(item["link"]))
             img = img.convert("RGBA")
             background.paste(img)
             device2.display(background.convert(device2.mode))
