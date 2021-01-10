@@ -49,6 +49,8 @@ device.contrast(5)
 virtual = viewport(device, width=32, height=16)
 show_message(device, 'Dan is really awesome', fill="white", font=proportional(LCD_FONT), scroll_delay=0.08)
 
+background = Image.new("RGBA", device2.size, "white")
+
 #with canvas(device2, dither=True) as draw:
  #   draw.rectangle((10,10,30,30), outline="white", fill="red")
 
@@ -60,6 +62,8 @@ show_message(device, 'Dan is really awesome', fill="white", font=proportional(LC
 
 #except KeyboardInterrupt:
  #   GPIO.cleanup()
+ 
+ 
 
 def populateItems():
     #first clear out everything
@@ -80,9 +84,11 @@ def createLinks():
         populateItems()
         for idx, item in enumerate(items):
             #print(str(item["title"]), idx)
-            show_message(device, str(item["title"]), fill="white", font=proportional(LCD_FONT), scroll_delay=0.08)
             img = qrcode.make(str(item["link"]))
-            device2.display(img)
+            img = img.convert("RGBA")
+            background.paste(img)
+            device2.display(background.convert(device2.mode))
+            show_message(device, str(item["title"]), fill="white", font=proportional(LCD_FONT), scroll_delay=0.08)
     except ValueError:
         print("Bummer :( I couldn't make you 'dem links :(")
     finally:
