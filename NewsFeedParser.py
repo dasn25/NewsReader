@@ -62,8 +62,8 @@ background = Image.new("RGBA", device2.size, "white")
    #         text(draw, (0, 1), "Dan is really awesome", fill="white", font=proportional(CP437_FONT))
            #text(draw, (0, 1), datetime.now().strftime('%I:%M'), fill="white", font=proportional(CP437_FONT))
 
-#except KeyboardInterrupt:
- #   GPIO.cleanup()
+except KeyboardInterrupt:
+    GPIO.cleanup()
  
  
 
@@ -73,7 +73,7 @@ def populateItems():
     del displayItems[:]
 
     #delete all the image files
-    #os.system("find . -name \*.ppm -delete")
+    os.system("find . -name \*.ppm -delete")
     for url in feeds:
         feed=feedparser.parse(url)
         posts=feed["items"]
@@ -89,7 +89,7 @@ def createLinks():
             qr.add_data(str(item["link"]))
             qr.make(fit=True)
             img = qr.make_image(fill_color="black", back_color="white")
-            img = img.resize(125,125)
+            #img = img.resize(125,125)
             img = img.convert("RGBA")
             background.paste(img)
             device2.display(background.convert(device2.mode))
