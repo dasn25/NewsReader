@@ -45,7 +45,7 @@ qr = qrcode.QRCode(
 
 serial = spi(port=0, device=0, gpio = noop())
 serial2= i2c(port=1, address=0x3D)
-device = max7219(serial, width=32, height=8, block_orientation=-90)
+device = max7219(serial, width=96, height=8, block_orientation=-90)
 device2 = ssd1327(serial2)
 device.contrast(5)
 virtual = viewport(device, width=32, height=16)
